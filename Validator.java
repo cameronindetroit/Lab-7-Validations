@@ -1,5 +1,8 @@
 package invalidInput;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Validator {
@@ -120,4 +123,25 @@ public class Validator {
 	 * VALIDATE DATE METHOD
 	 */
 
+	public static String getDate(Scanner scnr, String prompt) {
+		// To take the input
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Date ");
+
+		String date = scanner.next();
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date date2 = null;
+		try {
+			// Parsing the String
+			date2 = dateFormat.parse(date);
+		} catch (ParseException exception) {
+			System.out.println("Enter a valid date: dd-MM-yyyy");
+
+			scnr.nextLine();
+			// return getDate(scnr, prompt);
+		}
+		// System.out.println(date2);
+		return date.toLowerCase();
+	}
 }

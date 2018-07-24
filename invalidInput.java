@@ -20,8 +20,11 @@ public class invalidInput {
 		// System.out.println(userNumber);
 		// System.out.println(userEmail + " is a valid email");
 
-		System.out.println(
-				"Username: " + userName + " \n" + "Email Address: " + userEmail + "\n" + "Phone Number: " + userNumber);
+		String userDate = Validator.getDate(scnr, "Enter todays date: dd/MM/yy");
+		// System.out.println(userDate);
+
+		System.out.println("Username: " + userName + " \n" + "Email Address: " + userEmail + "\n" + "Phone Number: "
+				+ userNumber + "\n" + "Date: " + userDate);
 
 		scnr.close();
 	}
